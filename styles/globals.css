@@ -16,11 +16,12 @@ div.video {
   position: relative;
 }
 
-div.popup {
+div.overlay {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 5;
+  background-color: red;
 }
 
 iframe {
