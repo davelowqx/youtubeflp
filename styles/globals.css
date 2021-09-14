@@ -16,6 +16,13 @@ div.video {
   position: relative;
 }
 
+div.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
 iframe {
   position: absolute;
   border: 0;
