@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <main>
         <h1>Horizontally flip online videos</h1>
-        <p>Simply change the url from "youtube" to "youtubeflp"</p>
+        <p>Simply change the url from youtube to youtubeflp</p>
       </main>
     </>
   );
