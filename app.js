@@ -8,13 +8,15 @@ app.set("view engine", "ejs");
 app.use(express.static("./public"));
 
 app.get("/", (req, res) => {
-  res.render("public/index");
+  res.render("pages/index");
 });
 
 app.get("/watch", (req, res) => {
-  res.render("pages/index", { videoId: req.query.v });
+  res.render("pages/watch", { videoId: req.query.v });
 });
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`);
 });
+
+module.exports = app;

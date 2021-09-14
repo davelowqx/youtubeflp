@@ -1,10 +1,13 @@
 {
   "name": "youtubeflp",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "ejs": "^3.1.6",
+    "debug": "~2.6.9",
     "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node ./bin/www"
   }
 }

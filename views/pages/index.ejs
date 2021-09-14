@@ -1,29 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.png" sizes="144x144" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="mirror youtube videos" />
-    <title>YoutubeFlp</title>
+    <%- include("../partials/head");%>
   </head>
-  <body style="margin: 0; background-color: black">
-    <div style="width: min(100vw, calc(100vh / 9 * 16)); margin: auto">
-      <div style="padding: 56.25% 0 0 0; position: relative">
-        <iframe
-          style="
-            position: absolute;
-            transform: scaleX(-1);
-            border: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-          "
-          src="https://www.youtube.com/embed/<%= videoId %>"
-        >
-        </iframe>
-      </div>
-    </div>
+  <body style="margin: 3%; background-color: black">
+    <h1 style="color: white">Horizontally flip online videos</h1>
+    <p style="color: white">
+      Simply change the url from "youtube" to "youtubeflp"
+    </p>
   </body>
 </html>
