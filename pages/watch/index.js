@@ -23,15 +23,22 @@ export default function Watch() {
       */
   }, []);
   return (
-    <div className="container">
-      <iframe
-        id="iframe"
-        onClick={toggleInvert}
-        className={inverted ? "invertedX" : ""}
-        src={`https://www.youtube.com/embed/${v}?autoplay=1&fs=0&loop=1`}
-      ></iframe>
-      <div className="overlay">
-        <button onClick={toggleInvert}>{inverted ? "FLOP" : "FLIP"}</button>
+    <div className="w-100 h-100 bg-black">
+      <div className="container">
+        <iframe
+          id="iframe"
+          onClick={toggleInvert}
+          className={inverted ? "invertedX" : ""}
+          src={`https://www.youtube.com/embed/${v}?autoplay=1&fs=0&loop=1`}
+        ></iframe>
+        <div className="overlay">
+          <button
+            className={`${!inverted ? "bg-green" : "bg-red"}`}
+            onClick={toggleInvert}
+          >
+            {inverted ? "FLOP" : "FLIP"}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,19 +1,63 @@
-import Head from "next/head";
+import React from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const [input, setInput] = React.useState("");
+  const [error, setError] = React.useState(false);
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setError(false);
+    setInput(e.target.value.trim());
+  };
+
+  const parseUrl = () => {
+    let res;
+    if (
+      (res = input.match(
+        /^https:\/\/youtu\.be\/([a-zA-Z0-9\-\_]{11})([?].*)?$/
+      ))
+    ) {
+      router.push(`/watch?v=${res[1]}`);
+    } else if (
+      (res = input.match(
+        /^(?:(?:https?:\/\/)?www\.)?(?:youtube\.com\/watch\?v=)([a-zA-Z0-9\-\_]{11})([\/\&].*)?$/
+      ))
+    ) {
+      router.push(`/watch?v=${res[1]}`);
+    } else {
+      setError(true);
+    }
+  };
+
   return (
-    <>
-      <Head>
-        <title>YoutubeFlp</title>
-        <meta name="description" content="mirror youtube videos" />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" sizes="144x144" />
-      </Head>
-      <main>
-        <h1>Horizontally flip online videos</h1>
-        <p>Simply change the url from youtube to youtubeflp</p>
-      </main>
-    </>
+    <div className="m-3">
+      <h1>Horizontally flip YouTube videos</h1>
+      <p>
+        Simply change the url from <b>"youtube"</b> to <b>"youtubeflp"</b>!
+      </p>
+      <div className={`search-bar ${error ? "border-red" : ""}`}>
+        <input
+          className="w-100"
+          type="text"
+          placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          value={input}
+          onChange={handleChange}
+        />
+        <button
+          className="bg-gray-dark"
+          onClick={() => navigator.clipboard.readText().then(setInput)}
+        >
+          📋
+        </button>
+        <button
+          className="bg-green round-border-right"
+          type="submit"
+          onClick={() => parseUrl()}
+        >
+          GO
+        </button>
+      </div>
+    </div>
   );
 }

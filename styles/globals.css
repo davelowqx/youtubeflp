@@ -1,9 +1,19 @@
+:root {
+  --green: #86bd59;
+  --blue: #2b6bc0;
+  --gray: #c7ced6;
+  --gray-dark: #a5a5a5;
+  --black: #212121;
+  --white: #fcfcfc;
+  --red: #e66363;
+}
+
 html,
 body {
+  background-color: var(--white);
+  font-family: "Roboto";
   padding: 0;
   margin: 0;
-  background-color: black;
-  color: white;
 }
 
 div.container {
@@ -21,7 +31,6 @@ div.overlay {
   top: 0;
   left: 0;
   z-index: 5;
-  background-color: red;
 }
 
 iframe {
@@ -35,4 +44,76 @@ iframe {
 
 .invertedX {
   transform: scaleX(-1);
+}
+
+input,
+input:focus {
+  box-sizing: border-box;
+  border: none;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+input.error {
+  /* border: 1px solid red; */
+}
+
+button {
+  font-weight: bold;
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+button:active {
+  background-color: var(--gray);
+}
+
+.round-border-right {
+  border-radius: 0 5px 5px 0;
+}
+
+/* utility classes */
+
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100vh;
+}
+
+.m-3 {
+  margin: 3%;
+}
+
+.bg-black {
+  background-color: var(--black);
+}
+
+.bg-gray-dark {
+  background-color: var(--gray-dark);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+.border-red {
+  border-color: var(--red);
 }
