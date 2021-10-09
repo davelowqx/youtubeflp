@@ -34,7 +34,7 @@ export default function Home() {
     <div className="m-3">
       <h1>Horizontally flip YouTube videos</h1>
       <p>
-        Simply change the url from <b>"youtube"</b> to <b>"youtubeflp"</b>!
+        Simply change the url from <b>youtube</b> to <b>youtubeflp</b>!
       </p>
       <div className={`search-bar ${error ? "border-red" : ""}`}>
         <input
