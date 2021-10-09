@@ -32,12 +32,11 @@ export default function Watch() {
           src={`https://www.youtube.com/embed/${v}?autoplay=1&fs=0&loop=1`}
         ></iframe>
         <div className="overlay">
-          <button
-            className={`${!inverted ? "bg-green" : "bg-red"}`}
-            onClick={toggleInvert}
-          >
-            {inverted ? "FLOP" : "FLIP"}
-          </button>
+          <div>HI</div>
+          <label className="switch">
+            <input type="checkbox" onClick={toggleInvert} checked={inverted} />
+            <span className="switch"></span>
+          </label>
         </div>
       </div>
     </div>
