@@ -36,9 +36,9 @@ export default function Home() {
       <p>
         Simply change the url from <b>youtube</b> to <b>youtubeflp</b>!
       </p>
-      <div className={`search-bar ${error ? "border-red" : ""}`}>
+      <div className="d-flex">
         <input
-          className="w-100"
+          className={`w-100 ${error ? "border-red" : ""}`}
           type="text"
           placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
           value={input}

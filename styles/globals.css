@@ -46,13 +46,16 @@ iframe {
   transform: scaleX(-1);
 }
 
-input,
-input:focus {
+input {
   box-sizing: border-box;
-  border: none;
+  border: 2px solid var(--gray);
   padding: 0.5rem 1rem;
   outline: none;
-  border-radius: 5px;
+  border-radius: 7px 0px 0px 7px;
+}
+
+input:focus {
+  border-color: var(--blue);
 }
 
 button {
@@ -66,7 +69,7 @@ button:active {
 }
 
 .round-border-right {
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 7px 7px 0;
 }
 
 /* enclosing label */
@@ -124,11 +127,9 @@ input:checked + span.switch:after {
 
 /* utility classes */
 
-.search-bar {
+.d-flex {
   display: flex;
   flex-direction: row;
-  border: 1px solid var(--blue);
-  border-radius: 5px;
 }
 
 .w-100 {
@@ -164,5 +165,5 @@ input:checked + span.switch:after {
 }
 
 .border-red {
-  border-color: var(--red);
+  border-color: var(--red) !important;
 }
