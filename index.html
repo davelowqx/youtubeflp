@@ -1,24 +1,31 @@
 <html>
+	<head>
+		<meta charset="utf-8">
+		<title>YoutubeFlp</title>
+	</head>
 	<body style="background-color: black; margin:0">
-			<div style="width:min(100vw, calc(100vh / 9 * 16)); margin: auto">
-				<iframe id="iframe" 
-					src="https://www.youtube.com/embed/dQw4w9WgXcQ&autoplay=1"
-					frameborder="0" 
-					style="position: absolute; border:0; top: 0; left: 0; width: 100%; height: 100%; transform: scaleX(-1)"
-					></iframe> 
-				<div style="position:fixed; top:0; left:0; z-index:5">
-					<input id="switch" type="checkbox" checked></input>
-				</div>
+		<div style="width:min(100vw, calc(100vh / 9 * 16)); margin: auto">
+			<iframe id="iframe"
+				width="1280"
+				height="720"
+				frameborder="0" 
+				style="position: absolute; border:0; top: 0; left: 0; width: 100%; height: 100%; transform: scaleX(-1)"
+				></iframe> 
+			<div style="position:fixed; top:0; left:0; z-index:5">
+				<input id="switch" type="checkbox" checked></input>
 			</div>
+		</div>
 	</body>
 
 	<script>
 		const iframe = document.getElementById("iframe");
-		iframe.src = "https://www.youtube.com/embed/" + window.location.search.substr(3);
+		
+		const v = new URLSearchParams(window.location.search).get("v") ?? "dQw4w9WgXcQ";
+		iframe.src = "https://www.youtube.com/embed/" + v + "?autoplay=1";
 
 		const sw = document.getElementById("switch");
 		sw.addEventListener("change", e => { 
-			iframe.style = e.target.checked ? "transform: scaleX(-1)" : "";
+			iframe.style.transform = e.target.checked ? "scaleX(-1)" : "";
 		}); 
 
 	</script>
